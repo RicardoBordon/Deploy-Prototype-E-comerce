@@ -50,7 +50,7 @@ app.use(multer({storage}).single('image'));
 app.use("/api/v1", authRouter);
 app.use("/api/v1", productRoutes);
 
-const PORT = process.env.PORT || 3000;
+const PORT = process.env.PORT;
 
 app.listen(PORT, () => console.log("🔥🔥🔥 http://localhost:" + PORT));
 
