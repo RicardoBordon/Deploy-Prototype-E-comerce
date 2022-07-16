@@ -5,6 +5,7 @@
   "description": "",
   "main": "index.js",
   "scripts": {
+    "web": "node index.js",
     "start": "node index.js",
     "dev": "nodemon index.js"
   },
