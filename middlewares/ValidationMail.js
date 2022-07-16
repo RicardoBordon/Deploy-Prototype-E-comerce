@@ -16,7 +16,7 @@ const transport = nodemailer.createTransport({
 
 //genero el token a partir de un cod aleatorio y mail  
 
-const link = `<a href=http://localhost:5000/api/v1/confirm/${token}>${token}`;
+const link = `<a href=${process.env.ORIGIN}/api/v1/confirm/${token} target="_blank">${token}`;
 const emailMsg = {
     to: email,
     from: process.env.ML_USER,
