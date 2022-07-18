@@ -13,10 +13,11 @@ import cloudinary  from 'cloudinary';
 
 const app = express();
 
-const whiteList = [process.env.ORIGIN, process.env.ORIGIN2];
+const whiteList = [process.env.ORIGIN, process.env.ORIGIN2, process.env.ORIGIN3];
 
 app.use(cors({
     origin: function(origin, callback){
+        console.log(origin)
         if(!origin || whiteList.includes(origin)){
             return callback(null, origin)
         }
