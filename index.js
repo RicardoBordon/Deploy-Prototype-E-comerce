@@ -13,8 +13,6 @@ import cloudinary  from 'cloudinary';
 
 const app = express();
 
-app.use(cors());
-
 const whiteList = [process.env.ORIGIN];
 
 app.use(cors({
