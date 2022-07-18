@@ -37,7 +37,6 @@ export const generateRefreshToken = (uid, res) => {
             expires: new Date(Date.now() + expiresIn * 1000),
             sameSite: "none",
         })
-        // .send("cookie being initialised");
 
     } catch (error) {
         console.log(error);
