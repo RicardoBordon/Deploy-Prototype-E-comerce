@@ -15,18 +15,17 @@ const app = express();
 
 app.use(cors());
 
-// const whiteList = [process.env.ORIGIN];
+const whiteList = [process.env.ORIGIN];
 
-//   app.use(cors({ origin: 'http://localhost:3000', credentials: true }));
-
-// app.use(cors({
-//     origin: function(origin, callback){
-//         if(whiteList.includes(origin)){
-//             return callback(null, origin)
-//         }
-//         return callback("Error de cors origin no autorizado");
-//     }
-// }));
+app.use(cors({
+    origin: function(origin, callback){
+        if(whiteList.includes(origin)){
+            return callback(null, origin)
+        }
+        return callback("Error de cors origin no autorizado");
+    },
+    credentials: true,
+}));
 app.use(express.json());
 app.use(cookieParser());
 app.use(urlencoded({extended: true}));
