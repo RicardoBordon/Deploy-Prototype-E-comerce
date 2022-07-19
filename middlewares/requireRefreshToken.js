@@ -2,7 +2,7 @@ import Jwt from "jsonwebtoken";
 
 export const requireRefreshToken = (req, res, next) => {
     try {
-        const refreshTokenCookie = req.cookies.token;
+        const refreshTokenCookie = req.cookies.refreshToken;
         console.log(req.cookies.refreshtoken);
         // let refreshTokenCookie = req.headers?.authorization;
         if(!refreshTokenCookie) throw new Error("No existe el token");
