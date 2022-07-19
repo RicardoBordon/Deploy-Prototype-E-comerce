@@ -75,6 +75,6 @@ export const refreshToken = (req, res) => {
 
 export const logout = (req, res) => {
   
-    res.clearCookie("refreshToken", {domain: ORIGIN, path: "/"});
+    res.clearCookie("refreshToken");
     res.json({ok: true});      
 };
