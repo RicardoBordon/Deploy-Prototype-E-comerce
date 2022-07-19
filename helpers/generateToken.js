@@ -35,7 +35,7 @@ export const generateRefreshToken = (uid, res) => {
             httpOnly: true,
             secure: true,
             expires: new Date(Date.now() + expiresIn * 1000),
-            sameSite: "lax",
+            sameSite: "none",
         })
 
     } catch (error) {
