@@ -75,9 +75,7 @@ export const refreshToken = (req, res) => {
 
 export const logout = (req, res) => {
     res.clearCookie("refreshToken", {
-        httpOnly: true,
         secure: true,
-        expires: new Date(Date.now() + expiresIn * 1000),
         sameSite: "none",
     });
     res.json({ok: true});     
