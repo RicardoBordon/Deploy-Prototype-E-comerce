@@ -70,7 +70,16 @@ export const refreshToken = (req, res) => {
     } catch (error) {
         console.log(error);
     }
-  
+}
+
+export const refreshAdminToken = (req, res) => {
+    try {
+        const {tokenAdmin , expiresIn} = generateTokenAdmin(req.id);
+        return res.json( {tokenAdmin, expiresIn});
+        
+    } catch (error) {
+        console.log(error);
+    }
 }
 
 export const logout = (req, res) => {
